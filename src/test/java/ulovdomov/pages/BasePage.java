@@ -17,9 +17,15 @@ public abstract class BasePage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
+    public void openUrl(String url) {
+        driver.get(url);
+        dismissCookieBanner();
+    }
+
     protected void dismissCookieBanner() {
         try {
-            WebElement btn = wait.until(ExpectedConditions.elementToBeClickable(
+            WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            WebElement btn = shortWait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//button[contains(translate(text(),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'allow all')]")
             ));
             btn.click();

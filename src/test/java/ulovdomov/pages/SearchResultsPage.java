@@ -33,8 +33,8 @@ public class SearchResultsPage extends BasePage {
 
     public boolean areResultsLoaded() {
         try {
-            List<WebElement> cards = driver.findElements(LISTING_CARDS);
-            return !cards.isEmpty();
+            waitForVisible(LISTING_CARDS);
+            return true;
         } catch (Exception e) {
             return false;
         }

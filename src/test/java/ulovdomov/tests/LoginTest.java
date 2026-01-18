@@ -34,7 +34,7 @@ public class LoginTest {
 
     @BeforeEach
     void navigateToHome() {
-        driver.get(BASE_URL);
+        loginPage.openUrl(BASE_URL);
     }
 
     @Test
