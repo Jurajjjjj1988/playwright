@@ -8,7 +8,7 @@ import java.util.List;
 
 public class HomePage extends BasePage {
     private static final By HERO_HEADING    = By.cssSelector("[data-test='undefined.content.title']");
-    private static final By LOCATION_INPUT  = By.xpath("//input[contains(@placeholder,'město, ulice')]");
+    private static final By LOCATION_INPUT  = By.cssSelector("[data-test='searchAdressInput'] input");
     private static final By SEARCH_BUTTON   = By.xpath("//a[contains(text(),'Hledat bydlení')]");
     private static final By LISTING_PROMO   = By.cssSelector("[data-test='listingsPromo.heading']");
     private static final By SHOW_MORE_RENT  = By.xpath("//a[contains(text(),'Zobrazit další pronájmy')]");

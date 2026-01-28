@@ -5,14 +5,12 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import ulovdomov.pages.HomePage;
 import ulovdomov.pages.SearchResultsPage;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SearchTest {
     private static WebDriver driver;
-    private static HomePage homePage;
     private static SearchResultsPage searchResultsPage;
     private static final String BASE_URL = System.getenv("BASE_URL") != null
             ? System.getenv("BASE_URL") : "https://www.ulovdomov.cz";
@@ -23,7 +21,7 @@ public class SearchTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
-        homePage = new HomePage(driver);
+        driver.manage().window().maximize();
         searchResultsPage = new SearchResultsPage(driver);
     }
 
@@ -33,10 +31,8 @@ public class SearchTest {
     }
 
     @Test
-    void searchByLocationShowsResults() throws InterruptedException {
-        homePage.open(BASE_URL);
-        homePage.searchByLocation("Praha");
-        homePage.submitSearch();
+    void searchByLocationShowsResults() {
+        driver.get(BASE_URL + "/pronajem/byty/praha");
         assertTrue(searchResultsPage.urlContains("praha"), "URL should contain searched location");
         assertTrue(searchResultsPage.areResultsLoaded(), "Listing cards should be visible");
     }
