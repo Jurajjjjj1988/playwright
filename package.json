@@ -1,0 +1,32 @@
+{
+  "name": "ulovdomov-e2e",
+  "version": "1.0.0",
+  "description": "E2E test suite for ulovdomov.cz",
+  "scripts": {
+    "test": "npx playwright test --project=chromium",
+    "test:ui": "npx playwright test --project=chromium --ui",
+    "test:headed": "npx playwright test --project=chromium --headed",
+    "lint": "eslint . && prettier --check .",
+    "lint:fix": "eslint --fix . && prettier --write .",
+    "format": "prettier --write .",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "playwright",
+    "e2e",
+    "testing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.58.2",
+    "dotenv": "^17.3.1",
+    "eslint": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-playwright": "^2.10.1",
+    "husky": "^9.1.7",
+    "prettier": "^3.8.1",
+    "typescript-eslint": "^8.57.1"
+  }
+}
