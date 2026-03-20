@@ -1,7 +1,11 @@
 import { test } from '../fixtures/pages.fixture';
 import { TEST_DATA } from '../data/test-data';
 
+const hasCredentials = TEST_DATA.CREDENTIALS.EMAIL && TEST_DATA.CREDENTIALS.PASSWORD;
+
 test.describe('Login', () => {
+  test.skip(!hasCredentials, 'TEST_USER_EMAIL and TEST_USER_PASSWORD not set');
+
   test('should_login_successfully_with_valid_credentials', async ({ loginPage }) => {
     await test.step('Open homepage', async () => {
       await loginPage.navigate('/');
