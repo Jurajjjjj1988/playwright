@@ -226,3 +226,65 @@ jobs:
       - name: Fail the job if tests failed
         if: always() && steps.tests.outcome == 'failure'
         run: exit 1
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Start minikube
+        uses: medyagh/setup-minikube@v0.0.18
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Load image into minikube
+        env:
+          IMAGE: ${{ needs.build.outputs.image }}
+        run: |
+          minikube image load "$IMAGE"
+
+      - name: Create K8s secrets
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+        run: |
+          kubectl create secret generic ulovdomov-secrets \
+            --from-literal=BASE_URL="$BASE_URL" \
+            --from-literal=TEST_USER_EMAIL="$TEST_USER_EMAIL" \
+            --from-literal=TEST_USER_PASSWORD="$TEST_USER_PASSWORD"
+
+      - name: Deploy test job to K8s
+        env:
+          IMAGE: ${{ needs.build.outputs.image }}
+        run: |
+          sed "s|ulovdomov-tests:latest|$IMAGE|g" job.yaml | kubectl apply -f -
+
+      - name: Wait for job to complete
+        run: |
+          kubectl wait --for=condition=complete job/ulovdomov-tests --timeout=300s
+
+      - name: Notify Slack on K8s deploy success
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -s -X POST -H 'Content-type: application/json' \
+            --data '{"text": ":kubernetes: K8s deploy completed successfully on main"}' \
+            "$SLACK_WEBHOOK_URL"
+
+      - name: Notify Slack on K8s deploy failure
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -s -X POST -H 'Content-type: application/json' \
+            --data '{"text": ":x: K8s deploy failed on main"}' \
+            "$SLACK_WEBHOOK_URL"
