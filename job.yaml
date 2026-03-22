@@ -2,14 +2,17 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: ulovdomov-tests
+  namespace: default
 spec:
   backoffLimit: 1
+  activeDeadlineSeconds: 1800
+  ttlSecondsAfterFinished: 300
   template:
     spec:
       containers:
         - name: ulovdomov-tests
           image: ulovdomov-tests:latest
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           resources:
             requests:
               memory: '512Mi'
