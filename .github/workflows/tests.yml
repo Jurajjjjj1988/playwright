@@ -13,15 +13,17 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  packages: write
 
 concurrency:
   group: e2e-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    outputs:
+      image: ${{ steps.meta.outputs.tags }}
 
     steps:
       - uses: actions/checkout@v4
@@ -37,32 +39,60 @@ jobs:
       - name: Lint & format check
         run: npm run lint
 
-      - name: Cache Playwright browsers
-        id: playwright-cache
-        uses: actions/cache@v4
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
         with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install Playwright browsers
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install chromium --with-deps
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=sha,prefix=
 
-      - name: Install Playwright system deps
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps chromium
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
-      - name: Create .env
-        run: |
-          cat <<EOF > .env
-          BASE_URL=${{ secrets.BASE_URL }}
-          TEST_USER_EMAIL=${{ secrets.TEST_USER_EMAIL }}
-          TEST_USER_PASSWORD=${{ secrets.TEST_USER_PASSWORD }}
-          EOF
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    timeout-minutes: 15
 
-      - name: Run tests
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run tests in Docker
         id: tests
-        run: npx playwright test --project=chromium
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+          IMAGE: ${{ needs.build.outputs.image }}
+        run: |
+          docker run --rm \
+            -e BASE_URL="$BASE_URL" \
+            -e TEST_USER_EMAIL="$TEST_USER_EMAIL" \
+            -e TEST_USER_PASSWORD="$TEST_USER_PASSWORD" \
+            -v $(pwd)/test-results:/app/test-results \
+            -v $(pwd)/playwright-report:/app/playwright-report \
+            "$IMAGE"
         continue-on-error: true
 
       - name: Parse test results
