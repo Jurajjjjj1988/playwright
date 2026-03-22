@@ -90,6 +90,7 @@ jobs:
           IMAGE: ${{ needs.build.outputs.image }}
         run: |
           docker run --rm \
+            -e CI=true \
             -e BASE_URL="$BASE_URL" \
             -e TEST_USER_EMAIL="$TEST_USER_EMAIL" \
             -e TEST_USER_PASSWORD="$TEST_USER_PASSWORD" \
