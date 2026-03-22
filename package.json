@@ -16,7 +16,7 @@
     "e2e",
     "testing"
   ],
-  "author": "",
+  "author": "Juraj Kapusansky",
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^10.0.1",

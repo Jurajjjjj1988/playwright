@@ -3,25 +3,16 @@ import { BasePage } from './base.page';
 import { parsePrice } from '../helpers/parsers';
 
 /**
- * Page object for the search results page.
  * Contains listing cards, sort controls, result count, and map.
  */
 export class SearchResultsPage extends BasePage {
-  /** Sort dropdown */
   readonly sortSelect: Locator;
-  /** Result count text (e.g. "3762 pronájmů") */
   readonly resultCount: Locator;
-  /** Listing card containers */
   readonly listingCards: Locator;
-  /** Listing card headings (h2 inside cards) */
   readonly listingHeadings: Locator;
-  /** Price headings on listing cards */
   readonly listingPrices: Locator;
-  /** "Upravit hledání" button (mobile) */
   readonly editSearchButton: Locator;
-  /** Map container */
   readonly mapContainer: Locator;
-  /** Page heading (h1) */
   readonly pageHeading: Locator;
 
   constructor(page: Page) {
@@ -36,17 +27,12 @@ export class SearchResultsPage extends BasePage {
     this.pageHeading = page.getByRole('heading', { level: 1 });
   }
 
-  /**
-   * Navigate to search results page.
-   * @param path - URL path (e.g. '/pronajem/byty/praha')
-   */
   async open(path: string) {
     await this.navigate(path);
   }
 
   /**
-   * Sort results by given option and wait for page to reload.
-   * @param option - Sort option label ('Nejlepší', 'Nejnovější', 'Nejlevnější')
+   * @param option - Sort option label ('Nejlepší' | 'Nejnovější' | 'Nejlevnější')
    */
   async sortBy(option: 'Nejlepší' | 'Nejnovější' | 'Nejlevnější') {
     await this.sortSelect.waitFor({ state: 'visible' });
@@ -56,19 +42,16 @@ export class SearchResultsPage extends BasePage {
     await expect(this.listingCards.first()).toBeVisible();
   }
 
-  /** Verify search results page loaded and at least one listing is visible */
   async verifyResultsLoaded() {
     await this.waitForPageLoad();
     await expect(this.listingCards.first()).toBeVisible();
   }
 
-  /** Verify the result count text is displayed */
   async verifyResultCountVisible() {
     await expect(this.resultCount).toBeVisible();
   }
 
   /**
-   * Extract all visible listing prices as numbers.
    * @returns Array of price numbers (e.g. [15000, 26990, 42000])
    */
   async getListingPrices(): Promise<number[]> {
@@ -77,8 +60,7 @@ export class SearchResultsPage extends BasePage {
   }
 
   /**
-   * Extract listing address texts from visible cards.
-   * @returns Array of address strings (e.g. ["Praha - Michle, U plynárny"])
+   * @returns Array of address strings from the first 5 visible cards
    */
   async getListingAddresses(): Promise<string[]> {
     const count = await this.listingCards.count();
@@ -91,7 +73,6 @@ export class SearchResultsPage extends BasePage {
     return addresses;
   }
 
-  /** Click the first listing card and wait for detail page to load */
   async clickFirstListing() {
     const card = this.listingCards.first();
     await card.waitFor({ state: 'visible' });
@@ -101,18 +82,15 @@ export class SearchResultsPage extends BasePage {
     await this.waitForPageLoad();
   }
 
-  /** Verify map is visible (desktop viewport) */
   async verifyMapVisible() {
     await expect(this.mapContainer).toBeVisible();
   }
 
-  /** Verify map is hidden (mobile viewport) */
   async verifyMapHidden() {
     await expect(this.mapContainer).toBeHidden();
   }
 
   /**
-   * Get the page heading text.
    * @returns Heading text (e.g. "Pronájem bytů Praha")
    */
   async getPageHeadingText(): Promise<string> {
