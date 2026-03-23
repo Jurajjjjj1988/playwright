@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -114,7 +114,7 @@ jobs:
           destination_dir: report
 
       - name: Notify Slack on failure
-        if: steps.tests.outcome == 'failure'
+        if: always() && steps.tests.outcome == 'failure'
         run: |
           curl -s -X POST -H 'Content-type: application/json' \
             --data "{
@@ -154,7 +154,7 @@ jobs:
             ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Notify Slack on recovery
-        if: steps.tests.outcome == 'success' && github.event_name == 'push'
+        if: always() && steps.tests.outcome == 'success' && github.event_name == 'push'
         run: |
           curl -s -X POST -H 'Content-type: application/json' \
             --data "{
@@ -187,5 +187,5 @@ jobs:
             ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Fail the job if tests failed
-        if: steps.tests.outcome == 'failure'
+        if: always() && steps.tests.outcome == 'failure'
         run: exit 1
