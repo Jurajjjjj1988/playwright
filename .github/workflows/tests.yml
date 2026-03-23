@@ -6,7 +6,17 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: '0 8 * * 1-5' # Mon-Fri at 8:00 UTC
+    - cron: '0 8 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: e2e-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
@@ -24,17 +34,60 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
       - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install chromium --with-deps
+
+      - name: Install Playwright system deps
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
 
       - name: Create .env
         run: |
-          echo "BASE_URL=${{ secrets.BASE_URL }}" >> .env
-          echo "TEST_USER_EMAIL=${{ secrets.TEST_USER_EMAIL }}" >> .env
-          echo "TEST_USER_PASSWORD=${{ secrets.TEST_USER_PASSWORD }}" >> .env
+          cat <<EOF > .env
+          BASE_URL=${{ secrets.BASE_URL }}
+          TEST_USER_EMAIL=${{ secrets.TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD=${{ secrets.TEST_USER_PASSWORD }}
+          EOF
 
       - name: Run tests
+        id: tests
         run: npx playwright test --project=chromium
+        continue-on-error: true
+
+      - name: Parse test results
+        if: always()
+        id: results
+        run: |
+          if [ -f test-results/results.json ]; then
+            TOTAL=$(jq '.stats.expected + .stats.unexpected + .stats.skipped + .stats.flaky' test-results/results.json)
+            PASSED=$(jq '.stats.expected' test-results/results.json)
+            FAILED=$(jq '.stats.unexpected' test-results/results.json)
+            SKIPPED=$(jq '.stats.skipped' test-results/results.json)
+            FLAKY=$(jq '.stats.flaky' test-results/results.json)
+            DURATION=$(jq '.stats.duration' test-results/results.json)
+            DURATION_SEC=$(echo "scale=1; $DURATION / 1000" | bc)
+            echo "total=$TOTAL" >> $GITHUB_OUTPUT
+            echo "passed=$PASSED" >> $GITHUB_OUTPUT
+            echo "failed=$FAILED" >> $GITHUB_OUTPUT
+            echo "skipped=$SKIPPED" >> $GITHUB_OUTPUT
+            echo "flaky=$FLAKY" >> $GITHUB_OUTPUT
+            echo "duration=${DURATION_SEC}s" >> $GITHUB_OUTPUT
+          else
+            echo "total=0" >> $GITHUB_OUTPUT
+            echo "passed=0" >> $GITHUB_OUTPUT
+            echo "failed=0" >> $GITHUB_OUTPUT
+            echo "skipped=0" >> $GITHUB_OUTPUT
+            echo "flaky=0" >> $GITHUB_OUTPUT
+            echo "duration=unknown" >> $GITHUB_OUTPUT
+          fi
 
       - name: Upload test report
         if: always()
@@ -42,22 +95,97 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 7
+          retention-days: 14
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: test-results/
+          retention-days: 14
+
+      - name: Deploy report to GitHub Pages
+        if: always() && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./playwright-report
+          destination_dir: report
 
       - name: Notify Slack on failure
-        if: failure()
+        if: steps.tests.outcome == 'failure'
         run: |
-          curl -X POST -H 'Content-type: application/json' \
+          curl -s -X POST -H 'Content-type: application/json' \
             --data "{
-              \"text\": \":red_circle: *E2E Tests Failed*\n*Repo:* ${{ github.repository }}\n*Branch:* ${{ github.ref_name }}\n*Commit:* ${{ github.event.head_commit.message }}\n*Author:* ${{ github.actor }}\n*Details:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"
+              \"blocks\": [
+                {
+                  \"type\": \"header\",
+                  \"text\": { \"type\": \"plain_text\", \"text\": \":red_circle: E2E Tests Failed\", \"emoji\": true }
+                },
+                {
+                  \"type\": \"section\",
+                  \"fields\": [
+                    { \"type\": \"mrkdwn\", \"text\": \"*Passed:* ${{ steps.results.outputs.passed }}\" },
+                    { \"type\": \"mrkdwn\", \"text\": \"*Failed:* ${{ steps.results.outputs.failed }}\" },
+                    { \"type\": \"mrkdwn\", \"text\": \"*Skipped:* ${{ steps.results.outputs.skipped }}\" },
+                    { \"type\": \"mrkdwn\", \"text\": \"*Duration:* ${{ steps.results.outputs.duration }}\" },
+                    { \"type\": \"mrkdwn\", \"text\": \"*Branch:* ${{ github.ref_name }}\" },
+                    { \"type\": \"mrkdwn\", \"text\": \"*Author:* ${{ github.actor }}\" }
+                  ]
+                },
+                {
+                  \"type\": \"actions\",
+                  \"elements\": [
+                    {
+                      \"type\": \"button\",
+                      \"text\": { \"type\": \"plain_text\", \"text\": \":page_facing_up: Test Report\", \"emoji\": true },
+                      \"url\": \"https://jurajjjjj1988.github.io/playwright/report/\"
+                    },
+                    {
+                      \"type\": \"button\",
+                      \"text\": { \"type\": \"plain_text\", \"text\": \":github: Actions Run\", \"emoji\": true },
+                      \"url\": \"${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"
+                    }
+                  ]
+                }
+              ]
             }" \
             ${{ secrets.SLACK_WEBHOOK_URL }}
 
-      - name: Notify Slack on success (scheduled only)
-        if: success() && github.event_name == 'schedule'
+      - name: Notify Slack on recovery
+        if: steps.tests.outcome == 'success' && github.event_name == 'push'
         run: |
-          curl -X POST -H 'Content-type: application/json' \
+          curl -s -X POST -H 'Content-type: application/json' \
             --data "{
-              \"text\": \":large_green_circle: *E2E Tests Passed* (scheduled run)\n*Repo:* ${{ github.repository }}\"
+              \"blocks\": [
+                {
+                  \"type\": \"header\",
+                  \"text\": { \"type\": \"plain_text\", \"text\": \":large_green_circle: E2E Tests Passed\", \"emoji\": true }
+                },
+                {
+                  \"type\": \"section\",
+                  \"fields\": [
+                    { \"type\": \"mrkdwn\", \"text\": \"*Passed:* ${{ steps.results.outputs.passed }}\" },
+                    { \"type\": \"mrkdwn\", \"text\": \"*Skipped:* ${{ steps.results.outputs.skipped }}\" },
+                    { \"type\": \"mrkdwn\", \"text\": \"*Duration:* ${{ steps.results.outputs.duration }}\" },
+                    { \"type\": \"mrkdwn\", \"text\": \"*Branch:* ${{ github.ref_name }}\" }
+                  ]
+                },
+                {
+                  \"type\": \"actions\",
+                  \"elements\": [
+                    {
+                      \"type\": \"button\",
+                      \"text\": { \"type\": \"plain_text\", \"text\": \":page_facing_up: Test Report\", \"emoji\": true },
+                      \"url\": \"https://jurajjjjj1988.github.io/playwright/report/\"
+                    }
+                  ]
+                }
+              ]
             }" \
             ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Fail the job if tests failed
+        if: steps.tests.outcome == 'failure'
+        run: exit 1
