@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/pages.fixture';
+import { test } from '../fixtures/pages.fixture';
 
 test.describe('Navigation', () => {
   test('should_navigate_to_post_ad_page_and_back_via_logo', async ({ homePage }) => {

@@ -1,8 +1,11 @@
-import { test, expect } from '../fixtures/pages.fixture';
+import { test } from '../fixtures/pages.fixture';
 import { TEST_DATA } from '../data/test-data';
 
 test.describe('Listing Detail', () => {
-  test('should_display_listing_details_when_clicking_a_result', async ({ searchResultsPage, listingDetailPage }) => {
+  test('should_display_listing_details_when_clicking_a_result', async ({
+    searchResultsPage,
+    listingDetailPage,
+  }) => {
     await test.step('Open search results page', async () => {
       await searchResultsPage.open(TEST_DATA.URLS.RENTAL_APARTMENTS_PRAGUE);
     });

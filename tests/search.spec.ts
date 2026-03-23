@@ -2,7 +2,10 @@ import { test, expect } from '../fixtures/pages.fixture';
 import { TEST_DATA } from '../data/test-data';
 
 test.describe('Search', () => {
-  test('should_display_relevant_results_when_searching_by_location', async ({ homePage, searchResultsPage }) => {
+  test('should_display_relevant_results_when_searching_by_location', async ({
+    homePage,
+    searchResultsPage,
+  }) => {
     await test.step('Open homepage and search for Prague', async () => {
       await homePage.open();
       await homePage.searchByLocation(TEST_DATA.LOCATIONS.PRAGUE);

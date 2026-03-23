@@ -15,7 +15,8 @@ export class SearchResultsPage extends BasePage {
     super(page);
     this.sortSelect = page.getByRole('combobox').first();
     this.resultCount = page.getByText(/\d+\s+(pronájm|nejlevněj|prodej)/i);
-    this.listingCardLinks = page.getByRole('heading', { level: 2 })
+    this.listingCardLinks = page
+      .getByRole('heading', { level: 2 })
       .locator('xpath=ancestor::a[contains(@href, "/inzerat/")]');
     this.listingPrices = page.getByRole('heading', { level: 3 }).filter({ hasText: /Kč/ });
     this.editSearchButton = page.getByRole('button', { name: /upravit hledání/i });

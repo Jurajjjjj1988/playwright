@@ -4,16 +4,16 @@ Playwright test automation for [ulovdomov.cz](https://www.ulovdomov.cz), the Cze
 
 ## What's covered
 
-| Test | What it verifies |
-|------|-----------------|
-| Homepage | Hero section, search form, listing sections, navigation |
-| Search | Autocomplete location input, results match searched location |
-| Sort | Price order after sorting by cheapest |
-| Navigation | Post ad link, logo back to homepage |
-| Map | Map visible on desktop, hidden on mobile |
-| Responsive | Mobile layout — search form, edit button, map hidden |
-| Login | Login via modal with email/password |
-| Profile | Edit personal data, save, reload and verify persistence |
+| Test       | What it verifies                                             |
+| ---------- | ------------------------------------------------------------ |
+| Homepage   | Hero section, search form, listing sections, navigation      |
+| Search     | Autocomplete location input, results match searched location |
+| Sort       | Price order after sorting by cheapest                        |
+| Navigation | Post ad link, logo back to homepage                          |
+| Map        | Map visible on desktop, hidden on mobile                     |
+| Responsive | Mobile layout — search form, edit button, map hidden         |
+| Login      | Login via modal with email/password                          |
+| Profile    | Edit personal data, save, reload and verify persistence      |
 
 ## Setup
 
@@ -60,12 +60,12 @@ Tests run automatically via GitHub Actions:
 
 ### Required secrets
 
-| Secret | Description |
-|--------|-------------|
-| `BASE_URL` | Target site URL |
-| `TEST_USER_EMAIL` | Test account email |
-| `TEST_USER_PASSWORD` | Test account password |
-| `SLACK_WEBHOOK_URL` | Slack incoming webhook for notifications |
+| Secret               | Description                              |
+| -------------------- | ---------------------------------------- |
+| `BASE_URL`           | Target site URL                          |
+| `TEST_USER_EMAIL`    | Test account email                       |
+| `TEST_USER_PASSWORD` | Test account password                    |
+| `SLACK_WEBHOOK_URL`  | Slack incoming webhook for notifications |
 
 ## Project structure
 
