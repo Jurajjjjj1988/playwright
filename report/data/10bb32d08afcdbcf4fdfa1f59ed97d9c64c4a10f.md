@@ -1,0 +1,966 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e6]
+        - generic [ref=e8]:
+          - link [ref=e9] [cursor=pointer]:
+            - /url: /vlozeni-inzeratu
+            - text: Vložit inzerát
+          - generic [ref=e10]:
+            - button [ref=e11] [cursor=pointer]:
+              - img [ref=e13]
+            - button [ref=e15] [cursor=pointer]:
+              - img [ref=e16]
+    - main [ref=e17]:
+      - generic [ref=e18]:
+        - img [ref=e20]
+        - generic [ref=e22]:
+          - heading [level=1] [ref=e23]: Nový domov na jeden klik
+          - heading [level=2] [ref=e24]: Najděte bydlení podle svých představ kdekoliv
+          - generic [ref=e25]:
+            - generic [ref=e26]:
+              - paragraph [ref=e28]: Co hledáte?
+              - generic [ref=e33]:
+                - textbox [ref=e34] [cursor=pointer]: Pronájem
+                - img [ref=e36] [cursor=pointer]
+            - generic [ref=e38]:
+              - paragraph [ref=e40]: Jakou nemovitost?
+              - generic [ref=e41]:
+                - generic [ref=e42] [cursor=pointer]:
+                  - img [ref=e43]
+                  - paragraph [ref=e46]: Byt
+                - generic [ref=e47] [cursor=pointer]:
+                  - img [ref=e48]
+                  - paragraph [ref=e51]: Dům
+            - generic [ref=e52]:
+              - paragraph [ref=e54]: Kde?
+              - generic [ref=e56]:
+                - generic:
+                  - img
+                - textbox [ref=e57]:
+                  - /placeholder: Město, ulice...
+            - link [ref=e58] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti
+              - img [ref=e59]
+              - text: Zobrazit inzeráty
+      - generic [ref=e62]:
+        - heading [level=2] [ref=e63]: Pomáháme spokojeně bydlet, pronajímat i prodat
+        - generic [ref=e64] [cursor=pointer]:
+          - generic [ref=e65]:
+            - img [ref=e67]
+            - generic [ref=e68]:
+              - generic [ref=e69]:
+                - paragraph [ref=e70]: Majitel nemovitostí
+                - heading [level=3] [ref=e71]: Služby pro soukromé majitele
+              - img [ref=e72]
+          - generic [ref=e74]:
+            - img [ref=e76]
+            - generic [ref=e77]:
+              - generic [ref=e78]:
+                - paragraph [ref=e79]: Realitní makléř
+                - heading [level=3] [ref=e80]: Nástroje pro realitní činnost
+              - img [ref=e81]
+          - generic [ref=e83]:
+            - img [ref=e85]
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - paragraph [ref=e88]: Zájemce o bydlení
+                - heading [level=3] [ref=e89]: Přehledné rozhraní pro domov na míru
+              - img [ref=e90]
+      - generic [ref=e92]:
+        - heading [level=2] [ref=e93]:
+          - text: 10 let
+          - paragraph [ref=e94]: na trhu
+        - heading [level=2] [ref=e95]:
+          - text: "100"
+          - paragraph [ref=e96]: členný tým
+        - heading [level=2] [ref=e97]:
+          - text: 2 mil+
+          - paragraph [ref=e98]: zájemců o bydlení ročně
+        - heading [level=2] [ref=e99]:
+          - text: 7 000
+          - paragraph [ref=e100]: inzerátů měsíčně
+        - heading [level=2] [ref=e101]:
+          - text: 3 500 +
+          - paragraph [ref=e102]: bytů ve správě
+        - heading [level=2] [ref=e103]:
+          - text: "500"
+          - paragraph [ref=e104]: makléřů ve spolupráci
+      - generic [ref=e107]:
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - heading [level=2] [ref=e110]: Pronájem byt
+            - paragraph [ref=e111]: Nejnovější inzeráty pronájmu bytů v ČR.
+          - link [ref=e112] [cursor=pointer]:
+            - /url: /pronajem/bytu
+            - text: Zobrazit další pronájmy
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - button [ref=e118] [cursor=pointer]:
+              - img [ref=e119]
+            - group [ref=e121]:
+              - generic [ref=e123]:
+                - img [ref=e125]
+                - img [ref=e127]
+                - img [ref=e129]
+                - img [ref=e131]
+                - img [ref=e133]
+              - generic [ref=e135]:
+                - img [ref=e137]
+                - button [ref=e139] [cursor=pointer]
+                - button [ref=e140] [cursor=pointer]
+                - button [ref=e141] [cursor=pointer]
+                - button [ref=e142] [cursor=pointer]
+                - button [ref=e143] [cursor=pointer]
+                - img [ref=e145] [cursor=pointer]
+            - link [ref=e147] [cursor=pointer]:
+              - /url: /inzerat/pronajem-praha-nusle-dacickeho-2-1/5651607
+              - group [ref=e148]:
+                - generic [ref=e149]:
+                  - heading [level=3] [ref=e150]: Pronájem bytu 2+1 46 m2
+                  - paragraph [ref=e151]: Praha - Nusle, Dačického
+                  - paragraph [ref=e153]: 20 000 Kč
+          - generic [ref=e154]:
+            - button [ref=e158] [cursor=pointer]:
+              - img [ref=e159]
+            - group [ref=e161]:
+              - img [ref=e165]
+            - link [ref=e166] [cursor=pointer]:
+              - /url: /inzerat/pronajem-olomouc-olomouc-dolni-namesti-pokoj/5652345
+              - group [ref=e167]:
+                - generic [ref=e168]:
+                  - heading [level=3] [ref=e169]: Pronájem bytu pokoj 23 m2
+                  - paragraph [ref=e170]: Olomouc - Olomouc, Dolní náměstí
+                  - paragraph [ref=e172]: 6 000 Kč
+          - generic [ref=e173]:
+            - button [ref=e177] [cursor=pointer]:
+              - img [ref=e178]
+            - group [ref=e180]:
+              - generic [ref=e182]:
+                - img [ref=e184]
+                - img [ref=e186]
+                - img [ref=e188]
+                - img [ref=e190]
+                - img [ref=e192]
+              - generic [ref=e194]:
+                - img [ref=e196]
+                - button [ref=e198] [cursor=pointer]
+                - button [ref=e199] [cursor=pointer]
+                - button [ref=e200] [cursor=pointer]
+                - button [ref=e201] [cursor=pointer]
+                - button [ref=e202] [cursor=pointer]
+                - img [ref=e204] [cursor=pointer]
+            - link [ref=e206] [cursor=pointer]:
+              - /url: /inzerat/pronajem-praha-bubenec-u-akademie-3-1/5653441
+              - group [ref=e207]:
+                - generic [ref=e208]:
+                  - heading [level=3] [ref=e209]: Pronájem bytu 3+1 129 m2
+                  - paragraph [ref=e210]: Praha - Bubeneč, U akademie
+                  - paragraph [ref=e212]: 49 900 Kč
+          - generic [ref=e213]:
+            - button [ref=e217] [cursor=pointer]:
+              - img [ref=e218]
+            - group [ref=e220]:
+              - generic [ref=e222]:
+                - img [ref=e224]
+                - img [ref=e226]
+                - img [ref=e228]
+                - img [ref=e230]
+                - img [ref=e232]
+              - generic [ref=e234]:
+                - img [ref=e236]
+                - button [ref=e238] [cursor=pointer]
+                - button [ref=e239] [cursor=pointer]
+                - button [ref=e240] [cursor=pointer]
+                - button [ref=e241] [cursor=pointer]
+                - button [ref=e242] [cursor=pointer]
+                - img [ref=e244] [cursor=pointer]
+            - link [ref=e246] [cursor=pointer]:
+              - /url: /inzerat/pronajem-praha-hostivar-belinskeho-3-1/5652351
+              - group [ref=e247]:
+                - generic [ref=e248]:
+                  - heading [level=3] [ref=e249]: Pronájem bytu 3+1 84 m2
+                  - paragraph [ref=e250]: Praha - Hostivař, Bělinského
+                  - paragraph [ref=e252]: 20 000 Kč
+      - generic [ref=e255]:
+        - generic [ref=e256]:
+          - generic [ref=e257]:
+            - heading [level=2] [ref=e258]: Prodej domu
+            - paragraph [ref=e259]: Nejnovější inzeráty prodeje domů v ČR.
+          - link [ref=e260] [cursor=pointer]:
+            - /url: /prodej/domu
+            - text: Zobrazit další prodeje
+        - generic [ref=e261]:
+          - generic [ref=e262]:
+            - button [ref=e266] [cursor=pointer]:
+              - img [ref=e267]
+            - group [ref=e269]:
+              - generic [ref=e271]:
+                - img [ref=e273]
+                - img [ref=e275]
+                - img [ref=e277]
+                - img [ref=e279]
+                - img [ref=e281]
+              - generic [ref=e283]:
+                - img [ref=e285]
+                - button [ref=e287] [cursor=pointer]
+                - button [ref=e288] [cursor=pointer]
+                - button [ref=e289] [cursor=pointer]
+                - button [ref=e290] [cursor=pointer]
+                - button [ref=e291] [cursor=pointer]
+                - img [ref=e293] [cursor=pointer]
+            - link [ref=e295] [cursor=pointer]:
+              - /url: /inzerat/prodej-hevlin-hevlin-hevlin-rodinny-dum/5648361
+              - group [ref=e296]:
+                - generic [ref=e297]:
+                  - heading [level=3] [ref=e298]: Prodej domu 113 m2
+                  - paragraph [ref=e299]: Hevlín - Hevlín, Hevlín
+                  - paragraph [ref=e301]: 4 350 000 Kč
+          - generic [ref=e302]:
+            - button [ref=e306] [cursor=pointer]:
+              - img [ref=e307]
+            - group [ref=e309]:
+              - generic [ref=e311]:
+                - img [ref=e313]
+                - img [ref=e315]
+                - img [ref=e317]
+                - img [ref=e319]
+                - img [ref=e321]
+              - generic [ref=e323]:
+                - img [ref=e325]
+                - button [ref=e327] [cursor=pointer]
+                - button [ref=e328] [cursor=pointer]
+                - button [ref=e329] [cursor=pointer]
+                - button [ref=e330] [cursor=pointer]
+                - button [ref=e331] [cursor=pointer]
+                - img [ref=e333] [cursor=pointer]
+            - link [ref=e335] [cursor=pointer]:
+              - /url: /inzerat/prodej-hevlin-hevlin-hevlin-rodinny-dum/5648384
+              - group [ref=e336]:
+                - generic [ref=e337]:
+                  - heading [level=3] [ref=e338]: Prodej domu 99 m2
+                  - paragraph [ref=e339]: Hevlín - Hevlín, Hevlín
+                  - paragraph [ref=e341]: 4 675 000 Kč
+          - generic [ref=e342]:
+            - button [ref=e346] [cursor=pointer]:
+              - img [ref=e347]
+            - group [ref=e349]:
+              - generic [ref=e351]:
+                - img [ref=e353]
+                - img [ref=e355]
+                - img [ref=e357]
+                - img [ref=e359]
+                - img [ref=e361]
+              - generic [ref=e363]:
+                - img [ref=e365]
+                - button [ref=e367] [cursor=pointer]
+                - button [ref=e368] [cursor=pointer]
+                - button [ref=e369] [cursor=pointer]
+                - button [ref=e370] [cursor=pointer]
+                - button [ref=e371] [cursor=pointer]
+                - img [ref=e373] [cursor=pointer]
+            - link [ref=e375] [cursor=pointer]:
+              - /url: /inzerat/prodej-pist-pist-ratiborska-rodinny-dum/5638149
+              - group [ref=e376]:
+                - generic [ref=e377]:
+                  - heading [level=3] [ref=e378]: Prodej domu 270 m2
+                  - paragraph [ref=e379]: Píšť - Píšť, Ratibořská
+                  - paragraph [ref=e381]: 5 900 000 Kč
+          - generic [ref=e382]:
+            - button [ref=e386] [cursor=pointer]:
+              - img [ref=e387]
+            - group [ref=e389]:
+              - generic [ref=e391]:
+                - img [ref=e393]
+                - img [ref=e395]
+                - img [ref=e397]
+                - img [ref=e399]
+                - img [ref=e401]
+              - generic [ref=e403]:
+                - img [ref=e405]
+                - button [ref=e407] [cursor=pointer]
+                - button [ref=e408] [cursor=pointer]
+                - button [ref=e409] [cursor=pointer]
+                - button [ref=e410] [cursor=pointer]
+                - button [ref=e411] [cursor=pointer]
+                - img [ref=e413] [cursor=pointer]
+            - link [ref=e415] [cursor=pointer]:
+              - /url: /inzerat/prodej-slovenice-slovenice-slovenice-rodinny-dum/5628407
+              - group [ref=e416]:
+                - generic [ref=e417]:
+                  - heading [level=3] [ref=e418]: Prodej domu 137 m2
+                  - paragraph [ref=e419]: Slověnice - Slověnice, Slověnice
+                  - paragraph [ref=e421]: 10 990 000 Kč
+      - generic [ref=e423]:
+        - heading [level=2] [ref=e424]: Pomáháme spokojeně bydlet, pronajímat i prodat
+        - generic [ref=e425]:
+          - link [ref=e426] [cursor=pointer]:
+            - /url: /pro-realitni-kancelare
+            - generic [ref=e427]:
+              - img [ref=e429]
+              - paragraph [ref=e432]: Inzerce pro realitní kanceláře
+              - img [ref=e433]
+          - link [ref=e435] [cursor=pointer]:
+            - /url: /vyhody/soukroma-inzerce
+            - generic [ref=e436]:
+              - img [ref=e438]
+              - paragraph [ref=e442]: Inzerce pro soukromé majitele
+              - img [ref=e443]
+          - link [ref=e445] [cursor=pointer]:
+            - /url: /radce
+            - generic [ref=e446]:
+              - img [ref=e448]
+              - paragraph [ref=e450]: Realitní blog
+              - img [ref=e451]
+          - link [ref=e453] [cursor=pointer]:
+            - /url: /hlidaci-pes
+            - generic [ref=e454]:
+              - img [ref=e456]
+              - paragraph [ref=e458]: Hlídací pes
+              - img [ref=e459]
+          - link [ref=e461] [cursor=pointer]:
+            - /url: /provereni-rizikovosti-osob
+            - generic [ref=e462]:
+              - img [ref=e464]
+              - paragraph [ref=e468]: Prověření rizikovosti osob
+              - img [ref=e469]
+          - link [ref=e471] [cursor=pointer]:
+            - /url: https://idealninajemce.cz/
+            - generic [ref=e472]:
+              - img [ref=e474]
+              - paragraph [ref=e478]: Služba Ideální nájemce
+              - img [ref=e479]
+          - link [ref=e481] [cursor=pointer]:
+            - /url: https://idealninajemce.cz/pronajimam/naceneni-najmu
+            - generic [ref=e482]:
+              - img [ref=e484]
+              - paragraph [ref=e486]: Nacenění nemovitosti
+              - img [ref=e487]
+          - link [ref=e489] [cursor=pointer]:
+            - /url: /sebeprovereni
+            - generic [ref=e490]:
+              - img [ref=e492]
+              - paragraph [ref=e494]: Sebeprověření
+              - img [ref=e495]
+          - link [ref=e497] [cursor=pointer]:
+            - /url: /balicky-provereni
+            - generic [ref=e498]:
+              - img [ref=e500]
+              - paragraph [ref=e504]: Balíčky Prověření osob
+              - img [ref=e505]
+          - link [ref=e507] [cursor=pointer]:
+            - /url: https://idealninajemce.cz/pronajimam/vzory-smluv
+            - generic [ref=e508]:
+              - img [ref=e510]
+              - paragraph [ref=e512]: Vzory smluv
+              - img [ref=e513]
+          - link [ref=e515] [cursor=pointer]:
+            - /url: https://idealninajemce.cz/cenova-mapa-najemneho
+            - generic [ref=e516]:
+              - img [ref=e518]
+              - paragraph [ref=e520]: Cenové mapy
+              - img [ref=e521]
+          - link [ref=e523] [cursor=pointer]:
+            - /url: /pruvodce-najemnika
+            - generic [ref=e524]:
+              - img [ref=e526]
+              - paragraph [ref=e528]: Průvodce nájemníka
+              - img [ref=e529]
+          - link [ref=e531] [cursor=pointer]:
+            - /url: /vizualni-prezentace
+            - generic [ref=e532]:
+              - img [ref=e534]
+              - paragraph [ref=e537]: Virtuální prezentace
+              - img [ref=e538]
+          - link [ref=e540] [cursor=pointer]:
+            - /url: https://prodeje.ulovdomov.cz/
+            - generic [ref=e541]:
+              - img [ref=e543]
+              - paragraph [ref=e546]: Prodej nemovitostí
+              - img [ref=e547]
+          - link [ref=e549] [cursor=pointer]:
+            - /url: https://idealninajemce.cz/pronajimam/obsazeni-bez-starosti
+            - generic [ref=e550]:
+              - img [ref=e552]
+              - paragraph [ref=e554]: Obsazení bez starostí
+              - img [ref=e555]
+          - button [ref=e557] [cursor=pointer]:
+            - generic [ref=e558]:
+              - img [ref=e560]
+              - paragraph [ref=e562]: Profil bydlení
+              - img [ref=e563]
+          - link [ref=e565] [cursor=pointer]:
+            - /url: https://www.houmy.cz/
+            - generic [ref=e566]:
+              - paragraph [ref=e568]: Aplikace Houmy
+              - img [ref=e569]
+      - group [ref=e571] [cursor=pointer]:
+        - paragraph [ref=e572]: 🚀 Čerstvé novinky
+        - img [ref=e574]
+    - contentinfo [ref=e576]:
+      - generic [ref=e577]:
+        - generic [ref=e578]:
+          - img [ref=e580]
+          - generic [ref=e582]:
+            - list [ref=e584]:
+              - listitem [ref=e585]:
+                - img [ref=e586]
+                - link [ref=e588] [cursor=pointer]:
+                  - /url: /kontakt
+                  - paragraph [ref=e589]: Kontakt
+              - listitem [ref=e590]:
+                - img [ref=e591]
+                - link [ref=e593] [cursor=pointer]:
+                  - /url: https://idealninajemce.cz/kariera
+                  - paragraph [ref=e594]: Kariéra
+            - list [ref=e596]:
+              - listitem [ref=e597]:
+                - img [ref=e598]
+                - link [ref=e600] [cursor=pointer]:
+                  - /url: /cenik
+                  - paragraph [ref=e601]: Ceník inzerce
+              - listitem [ref=e602]:
+                - img [ref=e603]
+                - link [ref=e605] [cursor=pointer]:
+                  - /url: /provereni-rizikovosti-osob
+                  - paragraph [ref=e606]: Prověření rizikovosti osob
+              - listitem [ref=e607]:
+                - img [ref=e608]
+                - link [ref=e610] [cursor=pointer]:
+                  - /url: https://idealninajemce.cz/?utm_source=ulovdomov&utm_medium=referal&utm_campaign=sluzba-idealni-najemce
+                  - paragraph [ref=e611]: Služba Ideální nájemce
+              - listitem [ref=e612]:
+                - img [ref=e613]
+                - link [ref=e615] [cursor=pointer]:
+                  - /url: https://www.houmy.cz/
+                  - paragraph [ref=e616]: Aplikace Houmy
+            - generic [ref=e617]:
+              - link [ref=e618] [cursor=pointer]:
+                - /url: /radce
+                - group [ref=e619]:
+                  - img [ref=e620]
+                  - paragraph [ref=e625]: Rádce
+              - generic [ref=e626]:
+                - link [ref=e627] [cursor=pointer]:
+                  - /url: https://www.facebook.com/UlovDomov
+                  - img [ref=e628]
+                - link [ref=e630] [cursor=pointer]:
+                  - /url: " https://www.instagram.com/ulovdomov_team/"
+                  - img [ref=e631]
+                - link [ref=e635] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/ulovdomov.cz/
+                  - img [ref=e636]
+        - separator [ref=e638]
+        - generic [ref=e639]:
+          - generic [ref=e640]:
+            - heading [level=2] [ref=e641]: Jsem majitel nemovitosti
+            - list [ref=e642]:
+              - listitem [ref=e643]:
+                - img [ref=e644]
+                - link [ref=e646] [cursor=pointer]:
+                  - /url: /vyhody/soukroma-inzerce
+                  - paragraph [ref=e647]: Výhody soukromé inzerce
+              - listitem [ref=e648]:
+                - img [ref=e649]
+                - link [ref=e651] [cursor=pointer]:
+                  - /url: /prodeje-nemovitosti
+                  - paragraph [ref=e652]: Prodej nemovitosti
+              - listitem [ref=e653]:
+                - img [ref=e654]
+                - link [ref=e656] [cursor=pointer]:
+                  - /url: https://idealninajemce.cz/naceneni-najmu
+                  - paragraph [ref=e657]: Nacenění nemovitosti
+              - listitem [ref=e658]:
+                - img [ref=e659]
+                - link [ref=e661] [cursor=pointer]:
+                  - /url: https://idealninajemce.cz/pronajimam/obsazeni-bez-starosti/?utm_source=ulovdomov&utm_medium=referal&utm_campaign=pronajem-bez-starosti
+                  - paragraph [ref=e662]: Obsazení bez starostí
+              - listitem [ref=e663]:
+                - img [ref=e664]
+                - link [ref=e666] [cursor=pointer]:
+                  - /url: https://www.livendo.sk
+                  - paragraph [ref=e667]: Livendo.sk
+          - generic [ref=e668]:
+            - heading [level=2] [ref=e669]: Hledám bydlení
+            - list [ref=e670]:
+              - listitem [ref=e671]:
+                - img [ref=e672]
+                - link [ref=e674] [cursor=pointer]:
+                  - /url: /hlidaci-pes
+                  - paragraph [ref=e675]: Hlídací pes
+              - listitem [ref=e676]:
+                - img [ref=e677]
+                - link [ref=e679] [cursor=pointer]:
+                  - /url: /sebeprovereni
+                  - paragraph [ref=e680]: Sebeprověření
+              - listitem [ref=e681]:
+                - img [ref=e682]
+                - link [ref=e684] [cursor=pointer]:
+                  - /url: /pruvodce-najemnika
+                  - paragraph [ref=e685]: Průvodce nájemníka
+          - generic [ref=e686]:
+            - heading [level=2] [ref=e687]: Jsem realitní makléř
+            - list [ref=e688]:
+              - listitem [ref=e689]:
+                - img [ref=e690]
+                - link [ref=e692] [cursor=pointer]:
+                  - /url: /vyhody/provereni-rizikovosti-osob
+                  - paragraph [ref=e693]: Výhody prověření
+              - listitem [ref=e694]:
+                - img [ref=e695]
+                - link [ref=e697] [cursor=pointer]:
+                  - /url: /balicky-provereni
+                  - paragraph [ref=e698]: Balíčky prověření
+              - listitem [ref=e699]:
+                - img [ref=e700]
+                - link [ref=e702] [cursor=pointer]:
+                  - /url: /pro-realitni-kancelare
+                  - paragraph [ref=e703]: Inzerce pro realitní kanceláře
+              - listitem [ref=e704]:
+                - img [ref=e705]
+                - link [ref=e707] [cursor=pointer]:
+                  - /url: /vizualni-prezentace
+                  - paragraph [ref=e708]: Vizuální prezentace
+        - separator [ref=e709]
+        - generic [ref=e710]:
+          - generic [ref=e711]:
+            - heading [level=3] [ref=e712]:
+              - link [ref=e713] [cursor=pointer]:
+                - /url: /pronajem/nemovitosti/praha?lokace=Praha
+                - text: Pronájem Praha
+            - link [ref=e714] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/nejlevnejsi/praha?lokace=Praha
+              - text: Levný pronájem Praha
+            - text: ","
+            - link [ref=e715] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/praha/bez-provize?lokace=Praha
+              - text: pronájem bytu Praha bez realitky
+            - text: ","
+            - link [ref=e716] [cursor=pointer]:
+              - /url: /pronajem/domu/praha?lokace=Praha
+              - text: pronájem domu Praha
+            - text: ","
+            - link [ref=e717] [cursor=pointer]:
+              - /url: /spolubydleni/praha?lokace=Praha
+              - text: spolubydlení Praha
+          - generic [ref=e718]:
+            - heading [level=3] [ref=e719]:
+              - link [ref=e720] [cursor=pointer]:
+                - /url: /pronajem/nemovitosti/brno?lokace=Brno
+                - text: Pronájem Brno
+            - link [ref=e721] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/nejlevnejsi/brno?lokace=Brno
+              - text: Levný pronájem Brno
+            - text: ","
+            - link [ref=e722] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/brno/bez-provize?lokace=Brno
+              - text: pronájem bytu Brno bez realitky
+            - text: ","
+            - link [ref=e723] [cursor=pointer]:
+              - /url: /pronajem/domu/brno?lokace=Brno
+              - text: pronájem domu Brno
+            - text: ","
+            - link [ref=e724] [cursor=pointer]:
+              - /url: /spolubydleni/brno?lokace=Brno
+              - text: spolubydlení Brno
+          - generic [ref=e725]:
+            - heading [level=3] [ref=e726]:
+              - link [ref=e727] [cursor=pointer]:
+                - /url: /pronajem/nemovitosti/ostrava?lokace=Ostrava
+                - text: Pronájem Ostrava
+            - link [ref=e728] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/nejlevnejsi/ostrava?lokace=Ostrava
+              - text: Levný pronájem Ostrava
+            - text: ","
+            - link [ref=e729] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/ostrava/bez-provize?lokace=Ostrava
+              - text: pronájem bytu Ostrava bez realitky
+            - text: ","
+            - link [ref=e730] [cursor=pointer]:
+              - /url: /pronajem/domu/ostrava?lokace=Ostrava
+              - text: pronájem domu Ostrava
+            - text: ","
+            - link [ref=e731] [cursor=pointer]:
+              - /url: /spolubydleni/ostrava?lokace=Ostrava
+              - text: spolubydlení Ostrava
+          - generic [ref=e732]:
+            - heading [level=3] [ref=e733]:
+              - link [ref=e734] [cursor=pointer]:
+                - /url: /pronajem/nemovitosti/plzen?lokace=Plze%C5%88
+                - text: Pronájem Plzeň
+            - link [ref=e735] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/nejlevnejsi/plzen?lokace=Plze%C5%88
+              - text: Levný pronájem Plzeň
+            - text: ","
+            - link [ref=e736] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/plzen/bez-provize?lokace=Plze%C5%88
+              - text: pronájem bytu Plzeň bez realitky
+            - text: ","
+            - link [ref=e737] [cursor=pointer]:
+              - /url: /pronajem/domu/plzen?lokace=Plze%C5%88
+              - text: pronájem domu Plzeň
+            - text: ","
+            - link [ref=e738] [cursor=pointer]:
+              - /url: /spolubydleni/plzen?lokace=Plze%C5%88
+              - text: spolubydlení Plzeň
+          - generic [ref=e739]:
+            - heading [level=3] [ref=e740]:
+              - link [ref=e741] [cursor=pointer]:
+                - /url: /pronajem/nemovitosti/liberec?lokace=Liberec
+                - text: Pronájem Liberec
+            - link [ref=e742] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/nejlevnejsi/liberec?lokace=Liberec
+              - text: Levný pronájem Liberec
+            - text: ","
+            - link [ref=e743] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/liberec/bez-provize?lokace=Liberec
+              - text: pronájem bytu Liberec bez realitky
+            - text: ","
+            - link [ref=e744] [cursor=pointer]:
+              - /url: /pronajem/domu/liberec?lokace=Liberec
+              - text: pronájem domu Liberec
+            - text: ","
+            - link [ref=e745] [cursor=pointer]:
+              - /url: /spolubydleni/liberec?lokace=Liberec
+              - text: spolubydlení Liberec
+          - generic [ref=e746]:
+            - heading [level=3] [ref=e747]:
+              - link [ref=e748] [cursor=pointer]:
+                - /url: /pronajem/nemovitosti/olomouc?lokace=Olomouc
+                - text: Pronájem Olomouc
+            - link [ref=e749] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/nejlevnejsi/olomouc?lokace=Olomouc
+              - text: Levný pronájem Olomouc
+            - text: ","
+            - link [ref=e750] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/olomouc/bez-provize?lokace=Olomouc
+              - text: pronájem bytu Olomouc bez realitky
+            - text: ","
+            - link [ref=e751] [cursor=pointer]:
+              - /url: /pronajem/domu/olomouc?lokace=Olomouc
+              - text: pronájem domu Olomouc
+            - text: ","
+            - link [ref=e752] [cursor=pointer]:
+              - /url: /spolubydleni/olomouc?lokace=Olomouc
+              - text: spolubydlení Olomouc
+          - generic [ref=e753]:
+            - heading [level=3] [ref=e754]:
+              - link [ref=e755] [cursor=pointer]:
+                - /url: /pronajem/nemovitosti/pardubice?lokace=Pardubice
+                - text: Pronájem Pardubice
+            - link [ref=e756] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/nejlevnejsi/pardubice?lokace=Pardubice
+              - text: Levný pronájem Pardubice
+            - text: ","
+            - link [ref=e757] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/pardubice/bez-provize?lokace=Pardubice
+              - text: pronájem bytu Pardubice bez realitky
+            - text: ","
+            - link [ref=e758] [cursor=pointer]:
+              - /url: /pronajem/domu/pardubice?lokace=Pardubice
+              - text: pronájem domu Pardubice
+            - text: ","
+            - link [ref=e759] [cursor=pointer]:
+              - /url: /spolubydleni/pardubice?lokace=Pardubice
+              - text: spolubydlení Pardubice
+          - generic [ref=e760]:
+            - heading [level=3] [ref=e761]:
+              - link [ref=e762] [cursor=pointer]:
+                - /url: /pronajem/nemovitosti/zlin?lokace=Zl%C3%ADn
+                - text: Pronájem Zlín
+            - link [ref=e763] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/nejlevnejsi/zlin?lokace=Zl%C3%ADn
+              - text: Levný pronájem Zlín
+            - text: ","
+            - link [ref=e764] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/zlin/bez-provize?lokace=Zl%C3%ADn
+              - text: pronájem bytu Zlín bez realitky
+            - text: ","
+            - link [ref=e765] [cursor=pointer]:
+              - /url: /pronajem/domu/zlin?lokace=Zl%C3%ADn
+              - text: pronájem domu Zlín
+            - text: ","
+            - link [ref=e766] [cursor=pointer]:
+              - /url: /spolubydleni/zlin?lokace=Zl%C3%ADn
+              - text: spolubydlení Zlín
+          - generic [ref=e767]:
+            - heading [level=3] [ref=e768]:
+              - link [ref=e769] [cursor=pointer]:
+                - /url: /pronajem/nemovitosti/ceske-budejovice?lokace=%C4%8Cesk%C3%A9%3BBud%C4%9Bjovice
+                - text: Pronájem České Budějovice
+            - link [ref=e770] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/nejlevnejsi/ceske-budejovice?lokace=%C4%8Cesk%C3%A9%3BBud%C4%9Bjovice
+              - text: Levný pronájem České Budějovice
+            - text: ","
+            - link [ref=e771] [cursor=pointer]:
+              - /url: /pronajem/nemovitosti/ceske-budejovice/bez-provize?lokace=%C4%8Cesk%C3%A9%3BBud%C4%9Bjovice
+              - text: pronájem bytu České Budějovice bez realitky
+            - text: ","
+            - link [ref=e772] [cursor=pointer]:
+              - /url: /pronajem/domu/ceske-budejovice?lokace=%C4%8Cesk%C3%A9%3BBud%C4%9Bjovice
+              - text: pronájem domu České Budějovice
+            - text: ","
+            - link [ref=e773] [cursor=pointer]:
+              - /url: /spolubydleni/ceske-budejovice?lokace=%C4%8Cesk%C3%A9%3BBud%C4%9Bjovice
+              - text: spolubydlení České Budějovice
+        - separator [ref=e774]
+        - generic [ref=e775]:
+          - generic [ref=e776]:
+            - heading [level=3] [ref=e777]:
+              - link [ref=e778] [cursor=pointer]:
+                - /url: /prodej/nemovitosti/praha?lokace=Praha
+                - text: Prodej Praha
+            - link [ref=e779] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/praha?lokace=Praha
+              - text: Byty na prodej Praha
+            - text: ","
+            - link [ref=e780] [cursor=pointer]:
+              - /url: /prodej/domu/praha?lokace=Praha
+              - text: prodej domu Praha
+            - text: ","
+            - link [ref=e781] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/praha/bez-provize?lokace=Praha
+              - text: byty na prodej Praha bez realitky
+            - text: ","
+            - link [ref=e782] [cursor=pointer]:
+              - /url: /prodej/domu/praha?typ-domu=rodinny&lokace=Praha
+              - text: prodej rodinné domy Praha
+          - generic [ref=e783]:
+            - heading [level=3] [ref=e784]:
+              - link [ref=e785] [cursor=pointer]:
+                - /url: /prodej/nemovitosti/brno?lokace=Brno
+                - text: Prodej Brno
+            - link [ref=e786] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/brno?lokace=Brno
+              - text: Byty na prodej Brno
+            - text: ","
+            - link [ref=e787] [cursor=pointer]:
+              - /url: /prodej/domu/brno?lokace=Brno
+              - text: prodej domu Brno
+            - text: ","
+            - link [ref=e788] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/brno/bez-provize?lokace=Brno
+              - text: byty na prodej Brno bez realitky
+            - text: ","
+            - link [ref=e789] [cursor=pointer]:
+              - /url: /prodej/domu/brno?typ-domu=rodinny&lokace=Brno
+              - text: prodej rodinné domy Brno
+          - generic [ref=e790]:
+            - heading [level=3] [ref=e791]:
+              - link [ref=e792] [cursor=pointer]:
+                - /url: /prodej/nemovitosti/ostrava?lokace=Ostrava
+                - text: Prodej Ostrava
+            - link [ref=e793] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/ostrava?lokace=Ostrava
+              - text: Byty na prodej Ostrava
+            - text: ","
+            - link [ref=e794] [cursor=pointer]:
+              - /url: /prodej/domu/ostrava?lokace=Ostrava
+              - text: prodej domu Ostrava
+            - text: ","
+            - link [ref=e795] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/ostrava/bez-provize?lokace=Ostrava
+              - text: byty na prodej Ostrava bez realitky
+            - text: ","
+            - link [ref=e796] [cursor=pointer]:
+              - /url: /prodej/domu/ostrava?typ-domu=rodinny&lokace=Ostrava
+              - text: prodej rodinné domy Ostrava
+          - generic [ref=e797]:
+            - heading [level=3] [ref=e798]:
+              - link [ref=e799] [cursor=pointer]:
+                - /url: /prodej/nemovitosti/plzen?lokace=Plze%C5%88
+                - text: Prodej Plzeň
+            - link [ref=e800] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/plzen?lokace=Plze%C5%88
+              - text: Byty na prodej Plzeň
+            - text: ","
+            - link [ref=e801] [cursor=pointer]:
+              - /url: /prodej/domu/plzen?lokace=Plze%C5%88
+              - text: prodej domu Plzeň
+            - text: ","
+            - link [ref=e802] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/plzen/bez-provize?lokace=Plze%C5%88
+              - text: byty na prodej Plzeň bez realitky
+            - text: ","
+            - link [ref=e803] [cursor=pointer]:
+              - /url: /prodej/domu/plzen?typ-domu=rodinny&lokace=Plze%C5%88
+              - text: prodej rodinné domy Plzeň
+          - generic [ref=e804]:
+            - heading [level=3] [ref=e805]:
+              - link [ref=e806] [cursor=pointer]:
+                - /url: /prodej/nemovitosti/liberec?lokace=Liberec
+                - text: Prodej Liberec
+            - link [ref=e807] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/liberec?lokace=Liberec
+              - text: Byty na prodej Liberec
+            - text: ","
+            - link [ref=e808] [cursor=pointer]:
+              - /url: /prodej/domu/liberec?lokace=Liberec
+              - text: prodej domu Liberec
+            - text: ","
+            - link [ref=e809] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/liberec/bez-provize?lokace=Liberec
+              - text: byty na prodej Liberec bez realitky
+            - text: ","
+            - link [ref=e810] [cursor=pointer]:
+              - /url: /prodej/domu/liberec?typ-domu=rodinny&lokace=Liberec
+              - text: prodej rodinné domy Liberec
+          - generic [ref=e811]:
+            - heading [level=3] [ref=e812]:
+              - link [ref=e813] [cursor=pointer]:
+                - /url: /prodej/nemovitosti/olomouc?lokace=Olomouc
+                - text: Prodej Olomouc
+            - link [ref=e814] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/olomouc?lokace=Olomouc
+              - text: Byty na prodej Olomouc
+            - text: ","
+            - link [ref=e815] [cursor=pointer]:
+              - /url: /prodej/domu/olomouc?lokace=Olomouc
+              - text: prodej domu Olomouc
+            - text: ","
+            - link [ref=e816] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/olomouc/bez-provize?lokace=Olomouc
+              - text: byty na prodej Olomouc bez realitky
+            - text: ","
+            - link [ref=e817] [cursor=pointer]:
+              - /url: /prodej/domu/olomouc?typ-domu=rodinny&lokace=Olomouc
+              - text: prodej rodinné domy Olomouc
+          - generic [ref=e818]:
+            - heading [level=3] [ref=e819]:
+              - link [ref=e820] [cursor=pointer]:
+                - /url: /prodej/nemovitosti/pardubice?lokace=Pardubice
+                - text: Prodej Pardubice
+            - link [ref=e821] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/pardubice?lokace=Pardubice
+              - text: Byty na prodej Pardubice
+            - text: ","
+            - link [ref=e822] [cursor=pointer]:
+              - /url: /prodej/domu/pardubice?lokace=Pardubice
+              - text: prodej domu Pardubice
+            - text: ","
+            - link [ref=e823] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/pardubice/bez-provize?lokace=Pardubice
+              - text: byty na prodej Pardubice bez realitky
+            - text: ","
+            - link [ref=e824] [cursor=pointer]:
+              - /url: /prodej/domu/pardubice?typ-domu=rodinny&lokace=Pardubice
+              - text: prodej rodinné domy Pardubice
+          - generic [ref=e825]:
+            - heading [level=3] [ref=e826]:
+              - link [ref=e827] [cursor=pointer]:
+                - /url: /prodej/nemovitosti/zlin?lokace=Zl%C3%ADn
+                - text: Prodej Zlín
+            - link [ref=e828] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/zlin?lokace=Zl%C3%ADn
+              - text: Byty na prodej Zlín
+            - text: ","
+            - link [ref=e829] [cursor=pointer]:
+              - /url: /prodej/domu/zlin?lokace=Zl%C3%ADn
+              - text: prodej domu Zlín
+            - text: ","
+            - link [ref=e830] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/zlin/bez-provize?lokace=Zl%C3%ADn
+              - text: byty na prodej Zlín bez realitky
+            - text: ","
+            - link [ref=e831] [cursor=pointer]:
+              - /url: /prodej/domu/zlin?typ-domu=rodinny&lokace=Zl%C3%ADn
+              - text: prodej rodinné domy Zlín
+          - generic [ref=e832]:
+            - heading [level=3] [ref=e833]:
+              - link [ref=e834] [cursor=pointer]:
+                - /url: /prodej/nemovitosti/ceske-budejovice?lokace=%C4%8Cesk%C3%A9%3BBud%C4%9Bjovice
+                - text: Prodej České Budějovice
+            - link [ref=e835] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/ceske-budejovice?lokace=%C4%8Cesk%C3%A9%3BBud%C4%9Bjovice
+              - text: Byty na prodej České Budějovice
+            - text: ","
+            - link [ref=e836] [cursor=pointer]:
+              - /url: /prodej/domu/ceske-budejovice?lokace=%C4%8Cesk%C3%A9%3BBud%C4%9Bjovice
+              - text: prodej domu České Budějovice
+            - text: ","
+            - link [ref=e837] [cursor=pointer]:
+              - /url: /prodej/nemovitosti/ceske-budejovice/bez-provize?lokace=%C4%8Cesk%C3%A9%3BBud%C4%9Bjovice
+              - text: byty na prodej České Budějovice bez realitky
+            - text: ","
+            - link [ref=e838] [cursor=pointer]:
+              - /url: /prodej/domu/ceske-budejovice?typ-domu=rodinny&lokace=%C4%8Cesk%C3%A9%3BBud%C4%9Bjovice
+              - text: prodej rodinné domy České Budějovice
+        - separator [ref=e839]
+        - generic [ref=e840]:
+          - list [ref=e841]:
+            - listitem [ref=e842]:
+              - img [ref=e843]
+              - link [ref=e845] [cursor=pointer]:
+                - /url: /mapa-stranek
+                - paragraph [ref=e846]: Mapa stránek
+            - listitem [ref=e847]:
+              - img [ref=e848]
+              - link [ref=e850] [cursor=pointer]:
+                - /url: /obchodni-podminky
+                - paragraph [ref=e851]: Obchodní podmínky
+            - listitem [ref=e852]:
+              - img [ref=e853]
+              - link [ref=e855] [cursor=pointer]:
+                - /url: /zpracovani-osobnich-udaju
+                - paragraph [ref=e856]: Poučení o soukromí
+            - listitem [ref=e857]:
+              - img [ref=e858]
+              - button [ref=e860] [cursor=pointer]:
+                - paragraph [ref=e861]: Upravit nastavení cookies
+            - listitem [ref=e862]:
+              - img [ref=e863]
+              - link [ref=e865] [cursor=pointer]:
+                - /url: /whistleblowing
+                - paragraph [ref=e866]: Whistleblowing
+          - paragraph [ref=e868]: © 2026 UlovDomov.cz s.r.o.
+  - alert [ref=e869]
+  - generic:
+    - region
+    - region
+    - region
+    - region
+    - region
+    - region
+  - iframe [ref=e870]:
+    
+  - generic [ref=e874]:
+    - generic [ref=e878]: Kontaktujte nás »Jsme online
+    - generic [ref=e881]:
+      - paragraph [ref=e882]: Vítejte! 👋 Máte konkrétní otázku nebo potřebujete pomoci? Jsme tu pro vás. S čím vám můžeme poradit?
+      - button [ref=e884] [cursor=pointer]: Spustit chat
+    - paragraph [ref=e885]:
+      - text: Powered by
+      - link [ref=e886] [cursor=pointer]:
+        - /url: https://daktela.com
+        - text: Daktela
+  - dialog [ref=e889]:
+    - button "Zavřít" [ref=e891] [cursor=pointer]:
+      - img [ref=e892]
+    - generic [ref=e897]:
+      - heading "Vše o bydlení na jednom místě" [level=3] [ref=e898]
+      - generic [ref=e899]:
+        - tablist [ref=e901]:
+          - tab "Přihlásit se" [selected] [ref=e902] [cursor=pointer]
+          - tab "Registrovat se" [ref=e903] [cursor=pointer]
+        - tabpanel "Přihlásit se" [ref=e905]:
+          - generic [ref=e906]:
+            - paragraph [ref=e907]: Váš email
+            - generic [ref=e909]:
+              - generic [ref=e910]: Váš email
+              - textbox [ref=e911]
+            - paragraph [ref=e912]: Heslo
+            - generic [ref=e914]:
+              - generic [ref=e915]: Heslo
+              - textbox [active] [ref=e916]: test123
+              - button "Zobrazit heslo" [ref=e918] [cursor=pointer]:
+                - img "Zobrazit heslo" [ref=e919]
+            - button "Zapomenuté heslo?" [ref=e924] [cursor=pointer]:
+              - paragraph [ref=e925]: Zapomenuté heslo?
+            - button "Přihlásit se" [disabled]
+```
