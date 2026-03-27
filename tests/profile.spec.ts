@@ -1,7 +1,10 @@
 import { test, expect } from '../fixtures/pages.fixture';
 import { TEST_DATA } from '../data/test-data';
 
+const hasCredentials = TEST_DATA.CREDENTIALS.EMAIL && TEST_DATA.CREDENTIALS.PASSWORD;
+
 test.describe('Profile', () => {
+  test.skip(!hasCredentials, 'TEST_USER_EMAIL and TEST_USER_PASSWORD not set');
   test.beforeEach(async ({ loginPage }) => {
     await loginPage.navigate('/');
     await loginPage.openLoginModal();
